@@ -1,0 +1,42 @@
+*{margin:0;padding:0} 
+a{ text-decoration:none} 
+.apkicon{
+    width: 120px;
+    height: 120px;
+    border-radius:15px
+}
+.apkname{
+    margin-top: 30px;
+    font-size: 24px;
+    color: #333;
+}
+.apkdownload{
+    position: static;
+    width: auto;
+    height: 50px;
+    margin-top: 30px;
+    vertical-align: middle;
+    font-size: 24px;
+    color: #fff;
+    padding: 8px 60px;
+    background-color: #59C55B;
+    border-radius:30px;
+}
+.top{
+    position: relative;
+    z-index: -2;
+}
+.header{
+    background: url(../img/top_bg.png) top center no-repeat;
+    height: 300px;
+}
+.middle{
+    margin-top: -120px;
+}
+.wxtip{
+    color: #c60000;
+    font-size: 20px;
+    margin-top: 30px;
+    padding-left:20px;
+    padding-right: 20px;
+}

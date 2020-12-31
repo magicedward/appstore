@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+	<link rel="stylesheet" href="../css/main.css">
+    <style>
+    .tip_main_txt{
+        color: #007ACC;
+    }
+    .apkicon{
+    	width: 20%;
+    	height: 20%;
+    }
+    </style>
+    <script type="text/javascript">
+    	
+    	console.log("gogog")
+    	 // 平台判断
+      var mobilePlatform = {
+        android: /android/i.test(navigator.userAgent),
+        ipad: /ipad/i.test(navigator.userAgent),
+        iphone: /iphone/i.test(navigator.userAgent),
+        wphone: /Windows Phone/i.test(navigator.userAgent)
+      };
+      // 是否为微信浏览器
+      function isWeiXin() {
+        var ua = window.navigator.userAgent.toLowerCase();
+        if (ua.match(/MicroMessenger/i) == 'micromessenger') {
+          return true;
+        } else {
+          return false;
+        }
+      }
+      // 判断是否为移动端
+      function isMobile() {
+        var plat = false;
+        plat = mobilePlatform.android || mobilePlatform.ipad || mobilePlatform.iphone || mobilePlatform.wphone;
+        return plat;
+      }
+
+      function isAndroid() {
+        return mobilePlatform.android;
+      }
+
+      function isIOS() {
+        return (mobilePlatform.ipad || mobilePlatform.iphone);
+      }
+
+      function getPlatform() {
+        var plat = "";
+        plat = mobilePlatform.android && "android";
+        if (plat === false) {
+          plat = mobilePlatform.ipad && "ipad";
+        }
+        if (plat === false) {
+          plat = mobilePlatform.iphone && "iphone";
+        }
+        if (plat === false) {
+          plat = mobilePlatform.wphone && "Windows Phone";
+        }
+        return plat;
+      };
+      // 打印平台信息
+      function printPlatformInfo() {
+        var msg = [];
+        msg.push('getPlatform=' + getPlatform());
+        msg.push('isMobile=' + isMobile());
+        msg.push('isWeiXin=' + isWeiXin());
+      }
+      // 判断浏览器类型，跳转到不同的下载链接
+      // android设备的微信浏览器不支持下载功能，要跳转到指定页面并提示用户使用第三方浏览器
+      // ios设备的微信浏览器使用appstore的地址
+      printPlatformInfo();
+      if (isMobile()) {
+        // 移动端
+        if (isAndroid()) {
+        	console.log("ios?"+isAndroid())
+          if (!isWeiXin()) {
+            location.replace('http://appstore.szhaizhen.com/hidvr/HiDvr-release-10.9.1209.apk');
+          }
+        } else if (isIOS()) {
+          if (!isWeiXin()) {
+            location.replace('https://apps.apple.com/cn/app/hi-dvr/id1118614681');
+          }
+        }
+      }
+	</script>
+</head>
+<body>
+    <div class="top">
+        <div class="header">
+            
+        </div>
+    </div>
+    <div class="middle">
+        <div align="center"><img class="apkicon" src="icon.png"></div>
+        <div class="apkname" align="center">HiDVR</div>
+        <div class="wxtip" align="center">*&nbsp;微信用户请点击右上角后选择“<span class="tip_main_txt">在浏览器中打开</span>”，再下载应用</div>
+        <div class="apkname" align="center">
+        	<a class="apkdownload" href="HiDvr-release-10.9.1209">下&nbsp;&nbsp;&nbsp;&nbsp;载</a>
+        </div>
+    </div>
+</body>
+</html>

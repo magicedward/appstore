@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+    <link rel="stylesheet" href="../css/main.css">
+    <style>
+    .tip_main_txt{
+        color: #007ACC;
+    }
+    </style>
+</head>
+<body>
+    <div class="top">
+        <div class="header">
+            
+        </div>
+    </div>
+    <div class="middle">
+        <div align="center"><img class="apkicon" src="icon.png"></div>
+        <div class="apkname" align="center">HiDVR</div>
+        <div class="wxtip" align="center">*&nbsp;微信用户请点击右上角后选择“<span class="tip_main_txt">在浏览器中打开</span>”，再下载应用</div>
+        <div class="apkname" align="center"><a class="apkdownload" href="HiDvr-release-10.8.1126.apk">下&nbsp;&nbsp;&nbsp;&nbsp;载</a></div>
+    </div>
+</body>
+</html>
